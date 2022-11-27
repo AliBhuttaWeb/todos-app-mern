@@ -47,16 +47,12 @@ class Response {
      * message: This defines 'message' that we want to send to response
      * data: This defines 'data' of the response
      */
-    static success = (msg = null, data = null) => {
+    static success = (msg = null, data = null, code = null) => {
         this.clearResponse();
-
-        if(msg){
-            this.message = msg;
-        }
-
-        if(data){
-            this.data = data;
-        }
+        
+        this.message = msg ? msg : '';
+        this.data = data ? data : ResponseData.EMPTY;
+        this.code = code ? code : ResponseCode.SUCESS;
 
         return this.response();
     }
@@ -66,11 +62,14 @@ class Response {
      * message: This defines 'message' that we want to send to response
      * code: This defines the 'http code'
      */
-    static error = (msg = null, code = null) => {
+    static error = (msg = null, code = null, errors = null) => {
         this.clearResponse();
+
         this.isError = true;
         this.message = msg ? msg : ResponseMessages.SERVER_SIDE_ERROR;
         this.code    = code ? code : ResponseCode.SERVER_ERROR;
+        this.errors  = errors ? errors : [];
+        
         return this.response();
     }
 }
