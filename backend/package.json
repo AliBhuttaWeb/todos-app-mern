@@ -1,0 +1,29 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "a list having todos app",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AliBhuttaWeb/todo-in-mern.git"
+  },
+  "keywords": [
+    "todo",
+    "app"
+  ],
+  "author": "ali",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AliBhuttaWeb/todo-in-mern/issues"
+  },
+  "homepage": "https://github.com/AliBhuttaWeb/todo-in-mern#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.3",
+    "nodemon": "^2.0.20"
+  }
+}
